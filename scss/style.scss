@@ -1,1 +1,244 @@
-$primary: #333;
+@import url('https://fonts.googleapis.com/css?family=Gayathri&display=swap');
+
+$primary: #18121e;
+$secondary: #233237;
+$danger: #984b43;
+$warning: #eac67a;
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Gayathri';
+}
+
+body {
+	background: $primary;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: $warning;
+}
+
+// NAVBAR
+nav {
+	background: $secondary;
+	
+	button:focus {
+		text-decoration: none;
+		color: inherit;
+		outline: none;
+	}
+
+	.menu-btn{
+		position: absolute;
+		z-index: 3;
+		right: 35px;
+		top: 35px;
+		cursor: pointer;
+
+		.btn-line {
+			width: 28px;
+		    height: 3px;
+		    margin: 0 0 5px 0;
+		    background: $warning;
+		}
+	}
+
+	a.navbar-brand {
+		font-size: 2rem;
+		font-weight: 400;
+		margin: auto 0;
+		margin-top: 10px;
+		text-align: center;
+		color: $warning;
+	}
+
+	ul {
+		li {
+			a {
+				color: $danger;
+				font-size: 1.5rem;
+				font-weight: 400;
+				margin: auto 0;
+				margin-top: 10px;
+				text-align: center;
+				text-transform: uppercase;
+
+				&:hover {
+					color:lighten($danger, 30);
+				}
+			}
+		}
+	}
+}
+
+// SECTION
+.section {
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background: url('../img/portrait.jpg') no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+
+	&:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.5);
+ 	}
+
+	.content {
+		position: relative;
+		top: 35%;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		z-index: 2;
+		padding: 0 50px;
+
+		h1 {
+			font-size: 5rem;
+			color: #f3f3f3;
+		}
+
+		.lead {
+			font-size: 2rem;
+			color: $warning;
+			margin-right: 10px;
+		}
+
+		a {
+			font-size: 1.5rem;
+			color: lighten($danger, 25);
+			text-transform: uppercase;
+
+			&:hover {
+				text-decoration: none;
+				color: lighten($danger, 5);
+			}
+		}
+	}
+}
+
+// HISTORY
+.history {
+	margin-top: 100px;
+	margin-left: 10%;
+	margin-right: 10%;
+	color: #f3f3f3;
+	text-align: center;
+
+	h1 {
+		font-size: 3rem;
+		text-align: center;
+		color: $warning;
+	}
+
+	img {
+		height: 400px;
+		margin-bottom: 20px;
+	}
+
+	p {
+		text-align: start;
+		font-size: 1.2rem;
+	}
+
+	hr {
+		color: #e3e3e3;
+		background: #e3e3e3;
+	}
+
+	h2 {
+		color: $warning;
+	}
+}
+
+// GALLERY
+.gallery {
+	margin-top: 100px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 50px;
+	text-align: center;
+
+	h1 {
+		color: #f3f3f3;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+		align-items: center;
+		justify-items: center;
+
+		.cards {
+			background: transparent;
+			color: #e3e3e3;
+		}
+	}
+}
+
+
+@media screen and (min-width: 768px) {
+	.history{
+		img {
+			float: right;
+			height: 400px;
+			margin-left: 20px;
+		}
+	}
+
+	.gallery {
+		margin-left: 10%;
+		margin-right: 10%;
+
+		.grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.section{
+		.content {
+			text-align: start;
+		}
+		
+	}
+	.history{
+		img {
+			height: 600px;
+		}
+	}
+
+	.gallery {
+
+		.grid {
+			grid-template-columns: 1fr 1fr 1fr;
+			
+		}
+		
+	}
+	
+}
+
+@media screen and (min-width: 1200px) {
+	.gallery {
+		
+		.grid {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		
+	}
+}
